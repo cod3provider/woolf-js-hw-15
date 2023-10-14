@@ -14,7 +14,8 @@ const createBoxes = amount => {
   let width = 30;
   let height = 30;
 
-  for (let i = 1; i <= amount; i += 1) {
+  // 1st version
+  /*for (let i = 1; i <= amount; i += 1) {
     const div = document.createElement('div');
     div.style.width = `${width}px`;
     div.style.height = `${height}px`;
@@ -24,7 +25,23 @@ const createBoxes = amount => {
 
     width += 10;
     height += 10;
+  }*/
+
+  // 2nd version
+  const fragment = document.createDocumentFragment();
+
+  for(let i = 1; i <= amount; i += 1) {
+    const div = document.createElement('div');
+    div.style.width = `${width}px`;
+    div.style.height = `${height}px`;
+    div.style.backgroundColor = getRandomHexColor();
+
+    fragment.append(div);
+
+    width += 10;
+    height += 10;
   }
+  boxes.append(fragment)
 }
 
 const  destroyBoxes = () => {

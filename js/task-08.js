@@ -1,7 +1,4 @@
 const form = document.querySelector('.login-form');
-// const email = document.querySelector('input[name="email"]');
-// const password = document.querySelector('input[name="password"]');
-
 
 const handleSubmit = e => {
     e.preventDefault();

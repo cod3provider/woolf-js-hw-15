@@ -7,7 +7,7 @@ const handleSubmit = e => {
     const password = e.currentTarget.elements.password.value;
 
     if (email === '' || password === '') {
-        alert('You must fill in all fields');
+        return alert('You must fill in all fields');
     }
 
     const dataForm = {
